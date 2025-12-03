@@ -552,6 +552,30 @@ function Music() {
                       </p>
                       <p>created by AI</p>
                     </>
+                  ) : selectedNode.id === 13 ? (
+                    <>
+                      <h2>melancholia</h2>
+                      <p>
+                        <strong>n.</strong> the bittersweet ache of nostalgia for moments that never existed—a longing for a past you've only imagined, or a future that feels impossibly distant. it's the sensation of missing something you've never had, of grieving for experiences that live only in the realm of possibility. melancholia isn't sadness but a complex emotion that exists in the space between memory and desire, where the heart recognizes beauty in absence and finds comfort in the ache of what could have been.
+                      </p>
+                      <p>created by AI</p>
+                    </>
+                  ) : selectedNode.id === 14 ? (
+                    <>
+                      <h2>thoughtstream</h2>
+                      <p>
+                        <strong>n.</strong> the continuous flow of consciousness where thoughts merge, diverge, and reform like water currents. in this state, you're not thinking individual thoughts but experiencing a stream where ideas blend into sensations, memories surface as feelings, and the boundary between internal and external dissolves. thoughtstream describes those moments of deep reflection where you lose track of time because you've become the flow itself—not observing your thoughts but being carried by them, discovering insights not through analysis but through immersion in the current of awareness.
+                      </p>
+                      <p>created by AI</p>
+                    </>
+                  ) : selectedNode.id === 15 ? (
+                    <>
+                      <h2>sensoria</h2>
+                      <p>
+                        <strong>n.</strong> the heightened state where all senses merge into a single unified experience—where you can taste colors, feel sounds, and see the texture of silence. sensoria occurs in moments of intense presence, when the usual boundaries between sensory inputs dissolve and you experience the world as a symphony of sensation rather than separate channels of perception. it's the feeling of being fully alive in your body, where every nerve ending becomes a point of connection to the world, and existence itself becomes a tactile, audible, visible, tasteable, smellable phenomenon.
+                      </p>
+                      <p>created by AI</p>
+                    </>
                   ) : (
                     <>
                       <h2>Node {selectedNode.id}</h2>
