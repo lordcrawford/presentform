@@ -1,0 +1,192 @@
+.music-container {
+  width: 100%;
+  height: 600vw;
+  background-color: rgb(15, 44, 101);
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background-grid {
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.background-grid-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Covers full container height (800vw) */
+  z-index: 0; /* Behind EVERYTHING including title */
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.background-grid {
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.music-title {
+  color: #ff69b4;
+  font-family: 'Courier New', monospace;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 6rem 0 2rem 0;
+  text-align: center;
+  z-index: 10;
+  position: relative;
+  letter-spacing: 0.1em;
+  background-color: transparent;
+  background: transparent;
+  /* Don't clip content behind title */
+  overflow: visible;
+  pointer-events: none; /* Allow clicks to pass through to nodes behind */
+}
+
+.network-svg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1; /* Above background grid */
+  flex: 1;
+}
+
+.connections {
+  stroke: #ff69b4;
+  stroke-width: 4;
+}
+
+.connection-line {
+  stroke: #ff69b4;
+  stroke-width: 0.1;
+  transition: all 0.05s ease-out;
+}
+
+.node-group {
+  cursor: pointer;
+}
+
+.network-node {
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 0.5;
+  transition: all 0.3s ease;
+  pointer-events: all;
+}
+
+.network-node-hitbox {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.node-group:hover .network-node {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 0.8;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .music-title {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+  }
+  
+  .network-svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .connection-line {
+    stroke-width: 0.1;
+  }
+}
+
+@media (max-width: 480px) {
+  .music-title {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .network-svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .connection-line {
+    stroke-width: 0.15;
+  }
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  position: relative;
+  background-color: #ff69b4;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  border-radius: 4px;
+  padding: 2rem;
+  min-width: 300px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  transition: background-color 0.2s;
+}
+
+.modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-content {
+  color: #00ffff;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #00ffff;
+}
+
+.modal-content p {
+  margin: 0.5rem 0;
+  color: #00ffff;
+}
+
